@@ -1,3 +1,8 @@
 .name-title h1 {
-  color: whitesmoke;
+  /* color: black; */
+  font-family: 'Shrikhand', sans-serif;
+  font-size: 1.5em;
+}
+.subtitle h3{
+  font-size: 1.25em;
 }
