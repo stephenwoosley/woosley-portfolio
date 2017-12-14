@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Faster+One|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="text/javascript" src="./assets/js/vue.js"></script>
   <title>woosley</title>
 </head>
 <body>
@@ -24,9 +25,9 @@
       <div class="hero-foot">
           <nav class="tabs">
             <div class="container">
-              <ul>
+              <ul class="tab-list">
                 <li class="is-active"><a>Overview</a></li>
-                <li><a>Modifiers</a></li>
+                <li id="modifiers-tab"><a v-on:click="makeActive">Modifiers</a></li>
                 <li><a>Grid</a></li>
                 <li><a>Elements</a></li>
                 <li><a>Components</a></li>
@@ -47,5 +48,6 @@
       </div>
     </section>
   </div>
+<script type="text/javascript" src="./assets/js/main.js"></script>
 </body>
 </html>
