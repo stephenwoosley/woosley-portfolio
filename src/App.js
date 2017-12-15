@@ -71,6 +71,8 @@ class App extends Component {
         this.setState({educationActive: false})
         this.setState({contactActive: true})
         break;
+      default:
+        break;
     }
   }
 
