@@ -6,6 +6,7 @@
 }
 .subtitle h3{
   font-size: 1.25em;
+  padding: .5% 0 0 1%;
 }
 
 .container li {
@@ -28,6 +29,16 @@
        animation: fadein 2s;
 }
 
+.experience-one, .experience-two, .experience-three, .about-content, .scroll-btn .arrows {
+  line-height: 1.5em;
+  font-family: 'Lato', sans-serif;
+  padding: 0 20% 0 5%;
+}
+
+.scroll-btn {
+  padding-top: 2%;
+}
+
 .experience-content hr {
   visibility: hidden;
 }
@@ -35,6 +46,29 @@
 .coral-span {
   color: coral;
 }
+
+.arrows {
+	width: 60px;
+	height: 72px;
+	/* position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px; */
+}
+
+.arrows path {
+	stroke: coral;
+	fill: transparent;
+  stroke-width: 1px;
+  transition: all .5s ease;
+	/* animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite;  */
+}
+
+.arrows:hover path {
+  stroke: lightskyblue;
+}
+
 
 /* --------- CSS ANIMATION KEYFRAMES  ----------*/
 
