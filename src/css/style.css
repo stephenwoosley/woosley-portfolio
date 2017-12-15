@@ -1,0 +1,28 @@
+.name-title h1 {
+  /* color: black; */
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+.subtitle h3{
+  font-size: 1.25em;
+}
+
+.container li {
+  font-size: 1.15rem;
+}
+
+.tabs li.is-active a {
+  color: coral;
+  border-bottom-color: green;
+  border-bottom: 2px solid coral;
+}
+
+.about-content {
+  line-height: 1.5em;
+  font-family: 'Lato', sans-serif;
+}
+
+.coral-span {
+  color: coral;
+}

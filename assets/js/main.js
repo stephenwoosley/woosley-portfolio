@@ -1,44 +1,54 @@
-
-// document.getElementsByClassName("title").addEventListener("click", () => {
-//   console.log("clicked!");
-// });
-
-const tabUL = document.getElementsByClassName("tab-list");
-const tabs = tabUL[0].childNodes
-let array = [];
-// for (tab in tabs) {
-//   console.log(tab.)
-//   typeof tab.key == Number && array.push(tab)
-// }
-// console.log("array is: " + array)
-
-// console.log(tabs[1].className);
-// console.log(tabs)
-// console.log(typeof tabs[0])
-console.log(Object.keys(tabs))
-//const liTabs = tabs[0].filter(tab => tab != "#text");
-
-
-
-
-
-
 // onClick of any tab element, switch on tab position in childNode array (should be odd only)
 // change className to "is-active"
 
-let switchActiveClass = (index) => {
-   
-}
-
-let modifiersActive = new Vue({
-  el: '#modifiers-tab',
+// on
+let tabSwitch = new Vue({
+  el: '#main',
   data: {
-    message: 'Hello Vue.js!'
+    isActive: 'about',
+    activeClass: false,
+    itemActivatedClass: 'is-active'
   },
   methods: {
-    makeActive: () => {
-      console.log(this.el)
-      document.getElementById("modifiers-tab").className="is-active";
+    activateSwitcher: function() {
+      console.log('switcherActivated');
+      this.activeClass && this.itemActivatedClass;
+    },
+    makeActive: (item) => {
+      console.log('makeActive running on ' + item)
+      this.isActive = item
+      this.activeClass = true;
+      console.log(this.isActive);
+      item.className = 'is-active';
+      console.log(item.className);
     }
   }
 })
+
+
+
+// let modifiersActive = new Vue({
+//   el: '.tab-list',
+//   data: {
+//     tabNames: ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'],
+//     aboutIsActive: false,
+//     projectsIsActive: false,
+//     experienceIsActive: false,
+//     educationIsActive: false,
+//     contactIsActive: false
+//   },
+//   methods: {
+//     // makeActive: () => {
+//     //   console.log(this.el)
+//     //   document.getElementById("modifiers-tab").className="is-active";
+//     // }
+//     console: () => {
+//       console.log("v-on:click is working!")
+//     }
+
+//   }
+// })
+
+// Vue.component('tab-item', {
+//   template: `<li>${tabName}</li>`
+// })
