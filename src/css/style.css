@@ -1,3 +1,5 @@
+
+/* -------- HEADER CSS -------- */
 .name-title h1 {
   /* color: black; */
   font-family: 'Lato', sans-serif;
@@ -8,7 +10,10 @@
   font-size: 1.25em;
   padding: .5% 0 0 1%;
 }
+/* -------- HEADER CSS -------- */
 
+
+/* -------- TABS/NAV CSS -------- */
 .container li {
   font-size: 1.15rem;
 }
@@ -18,57 +23,105 @@
   border-bottom-color: green;
   border-bottom: 2px solid coral;
 }
+/* -------- TABS/NAV CSS -------- */
 
-.hero {
-  line-height: 1.5em;
+
+/* -------- FOOTER CSS -------- */
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#main {
+  flex: 1;
+}
+.footer {
+  background-color: #ffffff;
+  padding: 24px 0 24px 24px;
+  font-size: .7em;
+}
+
+/* -------- FOOTER CSS -------- */
+
+
+
+/* -------- GLOBAL CONTENT CSS -------- */
+
+/* header-like font style and spacing */
+.about-content, .experience-content {
+  letter-spacing: .075em;
   font-family: 'Lato', sans-serif;
+  color: #363636;
+  font-size: 2rem;
+  line-height: 1.5em;
+  font-weight: 900;
+  padding-top: 100px;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
-
-.experience-one, .experience-two, .experience-three, .about-content, .scroll-btn .arrows {
-  line-height: 1.5em;
-  font-family: 'Lato', sans-serif;
-  padding: 0 20% 0 5%;
-}
-
-.scroll-btn {
-  padding-top: 2%;
-}
-
-.experience-content hr {
+/* hr should be invisible */
+hr {
   visibility: hidden;
 }
-
+/* for colored text segments */
 .coral-span {
   color: coral;
 }
-
 .arrows {
 	width: 60px;
 	height: 72px;
-	/* position: absolute;
-	left: 50%;
-	margin-left: -30px;
-	bottom: 20px; */
 }
-
 .arrows path {
 	stroke: coral;
 	fill: transparent;
   stroke-width: 1px;
   transition: all .5s ease;
-	/* animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite;  */
 }
-
 .arrows:hover path {
   stroke: lightskyblue;
 }
 
+/* -------- GLOBAL CONTENT CSS -------- */
+
+/* figure {
+  max-width: 180px;
+} */
+
+
+.hidden {
+  /* display: none; */
+}
+
+.show {
+  /* position: absolute; */
+  /* left: -30em;
+  width: 30em;
+  height: 20em;
+  -webkit-animation: slide-in 2s forwards;
+  animation: slide-in 2s forwards; */
+  /* display: block; */
+}
+
+
+/* @-webkit-keyframes slide-in {
+ 100% { left: 0 }
+}
+@keyframes slide-in {
+ 100% { left: 0 }
+}
+
+@-webkit-keyframes slide-out {
+  0% 		{positon: absolute}
+  .001% 	{positon: absolute; right: -200px}
+}
+
+@keyframes slide-out {
+  0% 		{positon: absolute}
+  .001% 	{positon: absolute; right: -200px}
+} */
 
 /* --------- CSS ANIMATION KEYFRAMES  ----------*/
 
@@ -100,3 +153,10 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+/* 
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */

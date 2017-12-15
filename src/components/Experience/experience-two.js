@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css';
 
 const ExperienceTwo = (props) => {
   return(
-    <div>
+    <div className={props.twoClass}>
       <div className="experience-two" id="experience-two">
         In 2014 I began <span className="coral-span">moonlighting</span> as a developer-in-training, and began working for a string of <span className="coral-span">small startups</span>. I even <span className="coral-span">co-founded a coding bootcamp</span> in 2016.
       </div>

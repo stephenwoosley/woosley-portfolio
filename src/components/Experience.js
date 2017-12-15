@@ -16,33 +16,55 @@ class Experience extends Component {
     }
 
     handleScroll() { 
-      if (document.documentElement.scrollTop > 430) {
+      console.log("handleScroll running")
+      if (document.documentElement.scrollTop >= 0 && document.documentElement.scrollTop < 188) {
          this.setState({
-           twoClass: 'show', oneClass: 'hide'
+           twoClass: 'hidden', oneClass: 'show', threeClass: 'hidden'
          })
        }
-       else if (document.documentElement.scrollTop > 430) {
+      else if (document.documentElement.scrollTop > 188 && document.documentElement.scrollTop < 379) {
+        console.log("first break reached and twoClass is " + this.state.twoClass  + " while oneClass is " + this.state.oneClass)
          this.setState({
-           threeClass: 'show', twoClass: 'hide'
+           twoClass: 'show', oneClass: 'hidden', threeClass: 'hidden'
+         })
+       }
+       else if (document.documentElement.scrollTop > 380) {
+          console.log("second break reached and threeClass is " + this.state.threeClass + " while twoClass is " + this.state.twoClass)
+         this.setState({
+           threeClass: 'show', twoClass: 'hidden', oneClass: 'hidden'
          })
        }
      }
 
+     flipClass(buttonID) {
+       if(this.state.oneClass === 'show') {
+         this.setState({oneClass:'hidden', twoClass: 'show'})
+       }
+      if(this.state.twoClass === 'show') {
+        if(buttonID === 'one'){
+          this.setState({oneClass:'show', twoClass:'hidden'})
+        }
+        else {
+          this.setState({threeClass:'show', twoClass:'hidden'})
+        }
+      }
+
+
+     }
+
     render() {
       return(
-        <div>
-          <section className="hero is-medium hero-experience">
-            <div className="hero-body">
-              <div className="container">
-                <h3 className="title experience-content">
+          <div className="columns">
+            <div className="column is-1"></div>
+              <div className="column is-8">
+                <div className="experience-content">
                   <ExperienceOne oneClass={this.state.oneClass}/>
                   <ExperienceTwo twoClass={this.state.twoClass}/>
                   <ExperienceThree threeClass={this.state.threeClass}/>
-                </h3>
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            <div className="column is-3"></div>
+          </div>
       );
     }
 }

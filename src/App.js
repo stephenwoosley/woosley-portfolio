@@ -123,9 +123,8 @@ class App extends Component {
               </nav>
             </div>
           </section>
-          <section className="container">
+          <section className="container" id="wrapper">
             <div className="main columns">
-              <div className="column is-three-fifths">
                 {
                   this.state.aboutActive
                   ? <About/>
@@ -139,12 +138,21 @@ class App extends Component {
                           ? <Education/>
                           : <Contact/>
                 }
-              </div>
-              <div className="column">
-              </div>
             </div>
           </section>
         </div>
+        <footer class="footer">
+            <div class="container">
+              <div class="content has-text-left">
+                <p>
+                  Made by Stephen
+                  {/* <figure class="image is-16x16">
+                    <img src="http://res.cloudinary.com/stephenrwoosley/image/upload/v1513179546/me-cutout_wmqxhd.png"/>
+                  </figure> */}
+                </p>
+              </div>
+            </div>
+          </footer>
       </div>
     );
   }

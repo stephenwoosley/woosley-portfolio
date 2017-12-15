@@ -3,7 +3,7 @@ import 'bulma/css/bulma.css';
 
 const ExperienceOne = (props) => {
   return(
-    <div>
+    <div className={props.oneClass}>
       <div className="experience-one">
         I’ve worked in the <span className="coral-span">education world</span> since 2007, in both a <span className="coral-span">wide variety of roles</span>—from <span className="coral-span">instruction</span> to accounting to course design to <span className="coral-span">web development</span>—and ranging a <span className="coral-span">wide variety of age groups</span>—from kindergarteners to <span className="coral-span">university students</span> to middle-aged adults.
       </div>
