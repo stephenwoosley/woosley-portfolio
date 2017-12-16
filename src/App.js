@@ -79,9 +79,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App has-navbar-fixed-top">
         <div className="container" id="main">
-          <section className="hero">
+          <section className="hero navbar is-fixed-top">
             <div className="hero-body">
               <div className="level">
                 <div className="level-left">

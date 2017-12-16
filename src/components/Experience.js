@@ -4,6 +4,7 @@ import ExperienceTwo from './Experience/experience-two';
 import ExperienceThree from './Experience/experience-three';
 import LeftArrow from './Experience/Arrows/LeftArrow';
 import RightArrow from './Experience/Arrows/RightArrow';
+import sr from '../scrollreveal.js'
 import 'bulma/css/bulma.css';
 
 class Experience extends Component {
@@ -16,29 +17,36 @@ class Experience extends Component {
       showRightArrow: true
     }
     componentDidMount() {
-      window.onscroll = () => this.handleScroll()
+    
+      const configOne = {
+        origin: 'right',
+        duration: 1000,
+        delay: 150,
+        distance: '500px',
+        scale: 1,
+        easing: 'ease',
+      }
+      const configTwo = {
+        origin: 'left',
+        duration: 1000,
+        delay: 150,
+        distance: '500px',
+        scale: 1,
+        easing: 'ease',
+      }
+      const configThree = {
+        origin: 'bottom',
+        duration: 1000,
+        delay: 150,
+        distance: '500px',
+        scale: 1,
+        easing: 'ease',
+      }
+      
+      sr.reveal(this.refs.experienceonebox, configOne)
+      sr.reveal(this.refs.experiencetwobox, configTwo)
+      sr.reveal(this.refs.experiencethreebox, configThree)
     }
-
-    handleScroll() { 
-      console.log("handleScroll running")
-      if (document.documentElement.scrollTop >= 0 && document.documentElement.scrollTop < 188) {
-         this.setState({
-           twoClass: 'hidden', oneClass: 'show', threeClass: 'hidden'
-         })
-       }
-      else if (document.documentElement.scrollTop > 188 && document.documentElement.scrollTop < 379) {
-        console.log("first break reached and twoClass is " + this.state.twoClass  + " while oneClass is " + this.state.oneClass)
-         this.setState({
-           twoClass: 'show', oneClass: 'hidden', threeClass: 'hidden'
-         })
-       }
-       else if (document.documentElement.scrollTop > 380) {
-          console.log("second break reached and threeClass is " + this.state.threeClass + " while twoClass is " + this.state.twoClass)
-         this.setState({
-           threeClass: 'show', twoClass: 'hidden', oneClass: 'hidden'
-         })
-       }
-     }
 
      flipClass(buttonID) {
        if(this.state.oneClass === 'show') {
@@ -64,9 +72,16 @@ class Experience extends Component {
             </div>
               <div className="column is-8">
                 <div className="experience-content">
-                  <ExperienceOne oneClass={this.state.oneClass}/>
-                  <ExperienceTwo twoClass={this.state.twoClass}/>
-                  <ExperienceThree threeClass={this.state.threeClass}/>
+                  <div ref="experienceonebox" className="experienceonebox">
+                    <ExperienceOne oneClass={this.state.oneClass}/>
+                  </div>
+                  <div ref="experiencetwobox" className="experiencetwobox">
+                    <ExperienceTwo twoClass={this.state.twoClass}/>
+                  </div>
+                  <div ref="experiencethreebox" className="experiencethreebox">
+                    <ExperienceThree threeClass={this.state.threeClass}/>
+                  </div>
+                  
                 </div>
               </div>
             <div className="column is-3">

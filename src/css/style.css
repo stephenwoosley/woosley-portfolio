@@ -1,15 +1,21 @@
 
 /* -------- HEADER CSS -------- */
 
+.navbar {
+  padding: 0 10% 0 10%
+}
+
+.hero-body {
+  padding: 2rem 1.5rem;
+}
+
 .titles {
   flex-direction: column;
   align-items: flex-start;
 }
 
-.level-item .title{
-  
-  margin-bottom: 24;
- 
+.level-item .title {
+  margin-bottom: 5;
 }
 
 .name-title h1 {
@@ -18,10 +24,18 @@
   font-weight: 900;
   font-size: 1.5em;
 }
+
+.name-title {
+  padding-bottom: 7.5px;
+}
 .subtitle h3{
   font-size: 1.25em;
   /* padding: .25% 0 0 .5%; */
 }
+.App {
+  padding-top: 3.25rem
+}
+
 /* -------- HEADER CSS -------- */
 
 
@@ -67,12 +81,19 @@
   font-size: 2rem;
   line-height: 1.5em;
   font-weight: 900;
-  padding-top: 100px;
+  padding-top: 35%;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
    -ms-animation: fadein 2s; /* Internet Explorer */
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
+}
+/* .experience-content {
+  overflow: scroll;
+} */
+
+.experiencetwobox, .experiencethreebox {
+  padding-top: 20%;
 }
 /* hr should be invisible */
 hr {
@@ -176,3 +197,6 @@ hr {
   bottom: 0;
   left: 0;
 } */
+
+
+
