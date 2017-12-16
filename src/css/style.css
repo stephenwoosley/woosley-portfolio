@@ -1,5 +1,17 @@
 
 /* -------- HEADER CSS -------- */
+
+.titles {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.level-item .title{
+  
+  margin-bottom: 24;
+ 
+}
+
 .name-title h1 {
   /* color: black; */
   font-family: 'Lato', sans-serif;
@@ -8,7 +20,7 @@
 }
 .subtitle h3{
   font-size: 1.25em;
-  padding: .5% 0 0 1%;
+  /* padding: .25% 0 0 .5%; */
 }
 /* -------- HEADER CSS -------- */
 
@@ -71,7 +83,7 @@ hr {
   color: coral;
 }
 .arrows {
-	width: 60px;
+	width: 30px;
 	height: 72px;
 }
 .arrows path {
@@ -79,9 +91,13 @@ hr {
 	fill: transparent;
   stroke-width: 1px;
   transition: all .5s ease;
+  cursor: pointer;
 }
 .arrows:hover path {
   stroke: lightskyblue;
+}
+.experience-arrows {
+  margin-top: 200px;
 }
 
 /* -------- GLOBAL CONTENT CSS -------- */

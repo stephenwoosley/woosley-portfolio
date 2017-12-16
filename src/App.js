@@ -83,12 +83,33 @@ class App extends Component {
         <div className="container" id="main">
           <section className="hero">
             <div className="hero-body">
-              <div className="title name-title">
-                <h1>Stephen Woosley</h1>
+              <div className="level">
+                <div className="level-left">
+                  <div className="level-item titles">
+                    <div className="title is-spaced name-title">
+                      <h1>Stephen Woosley</h1>
+                    </div>
+                    <div className="subtitle">
+                      <h3>Web Developer</h3>
+                    </div>
+                    </div>
+                </div>
+                <div className="level-right">
+                  <div className="level-item">
+                    <span className="icon">
+                      <i class="fab fa-github"></i>
+                    </span> 
+                    <span className="icon">
+                      <i class="fab fa-linkedin-in"></i>
+                    </span>
+                    <span className="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="subtitle">
-                <h3>Web Developer</h3>
-              </div>
+              
+              
             </div>
             <div className="hero-foot">
               <nav className="tabs is-fullwidth">
