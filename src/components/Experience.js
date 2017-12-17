@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 import ExperienceOne from './Experience/experience-one';
 import ExperienceTwo from './Experience/experience-two';
 import ExperienceThree from './Experience/experience-three';
-import LeftArrow from './Experience/Arrows/LeftArrow';
-import RightArrow from './Experience/Arrows/RightArrow';
 import sr from '../scrollreveal.js'
 import 'bulma/css/bulma.css';
+
+let box1 = 'shouldnt be this';
+let box2 = 'shouldnt be this';
+let box3 = 'shouldnt be this';
 
 class Experience extends Component {
   
@@ -14,7 +17,7 @@ class Experience extends Component {
       twoClass: 'hidden',
       threeClass: 'hidden',
       showLeftArrow: true,
-      showRightArrow: true
+      showRightArrow: true,
     }
     componentDidMount() {
     
@@ -60,32 +63,51 @@ class Experience extends Component {
           this.setState({threeClass:'show', twoClass:'hidden'})
         }
       }
- 
+     }
 
+     clickArrow(arrowNum) {
+       arrowNum === 1
+       ? document.querySelector('.experiencetwobox').scrollIntoView({ behavior: 'smooth' })
+       : arrowNum === 2
+          ? document.querySelector('.experienceonebox').scrollIntoView({ behavior: 'smooth' })
+          : arrowNum === 3
+            ? document.querySelector('.experiencethreebox').scrollIntoView({ behavior: 'smooth' })
+            : document.querySelector('.experiencetwobox').scrollIntoView({ behavior: 'smooth' })
      }
 
     render() {
       return(
           <div className="columns">
             <div className="column is-1">
-              {/* {this.state.showLeftArrow && <LeftArrow/>} */}
             </div>
               <div className="column is-8">
                 <div className="experience-content">
                   <div ref="experienceonebox" className="experienceonebox">
-                    <ExperienceOne oneClass={this.state.oneClass}/>
+                    <div ref={node => {box1 = node}}>
+                      <ExperienceOne 
+                        oneClass={this.state.oneClass}
+                        box2={box2}
+                      />
+                    </div>
                   </div>
                   <div ref="experiencetwobox" className="experiencetwobox">
-                    <ExperienceTwo twoClass={this.state.twoClass}/>
+                    <div ref={node => {box2 = node}}>
+                      <ExperienceTwo 
+                        twoClass={this.state.twoClass}
+                        box2={box2}
+                      />
+                    </div>
                   </div>
                   <div ref="experiencethreebox" className="experiencethreebox">
-                    <ExperienceThree threeClass={this.state.threeClass}/>
+                    <ExperienceThree 
+                      threeClass={this.state.threeClass}
+                      clickArrow = {box3}
+                    />
                   </div>
                   
                 </div>
               </div>
             <div className="column is-3">
-              {/* {this.state.showRightArrow && <RightArrow/>} */}
             </div>
           </div>
       );

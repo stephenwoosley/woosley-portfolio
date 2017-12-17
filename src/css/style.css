@@ -36,6 +36,19 @@
   padding-top: 3.25rem
 }
 
+.icon-style {
+  margin: 0 3px 0 3px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: coral;
+}
+
 /* -------- HEADER CSS -------- */
 
 
@@ -88,23 +101,21 @@
     -o-animation: fadein 2s; /* Opera < 12.1 */
        animation: fadein 2s;
 }
-/* .experience-content {
-  overflow: scroll;
-} */
-
-.experiencetwobox, .experiencethreebox {
-  padding-top: 20%;
+.scroll-btn {
+  padding-top: 25px;
 }
-/* hr should be invisible */
-hr {
-  visibility: hidden;
+.experiencetwobox, .experiencethreebox {
+  margin-top: 35%;
+}
+.experiencethreebox {
+  margin-bottom: 35%;
 }
 /* for colored text segments */
 .coral-span {
   color: coral;
 }
 .arrows {
-	width: 30px;
+	width: 60px;
 	height: 72px;
 }
 .arrows path {
@@ -122,11 +133,6 @@ hr {
 }
 
 /* -------- GLOBAL CONTENT CSS -------- */
-
-/* figure {
-  max-width: 180px;
-} */
-
 
 .hidden {
   /* display: none; */

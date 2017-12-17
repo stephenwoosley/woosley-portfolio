@@ -96,14 +96,20 @@ class App extends Component {
                 </div>
                 <div className="level-right">
                   <div className="level-item">
-                    <span className="icon">
-                      <i class="fab fa-github"></i>
+                    <span className="icon icon-style">
+                      <a href="https://github.com/stephenwoosley">
+                        <i className="fab fa-github fa-lg"></i>
+                      </a>
                     </span> 
-                    <span className="icon">
-                      <i class="fab fa-linkedin-in"></i>
+                    <span className="icon icon-style">
+                      <a href="https://linkedin.com/in/stephenwoosley">
+                        <i className="fab fa-linkedin-in fa-lg"></i>
+                      </a>
                     </span>
-                    <span className="icon">
-                      <i class="fab fa-twitter"></i>
+                    <span className="icon icon-style">
+                      <a href="https://twitter.com/stephenwoosley">
+                        <i className="fab fa-twitter fa-lg"></i>
+                      </a>
                     </span>
                   </div>
                 </div>
@@ -162,9 +168,9 @@ class App extends Component {
             </div>
           </section>
         </div>
-        <footer class="footer">
-            <div class="container">
-              <div class="content has-text-left">
+        <footer className="footer">
+            <div className="container">
+              <div className="content has-text-left">
                 <p>
                   Made by Stephen
                   {/* <figure class="image is-16x16">
