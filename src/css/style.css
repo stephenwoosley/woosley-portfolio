@@ -87,7 +87,7 @@ a:hover {
 /* -------- GLOBAL CONTENT CSS -------- */
 
 /* header-like font style and spacing */
-.about-content, .experience-content {
+.about-content, .experience-content, .education-content {
   letter-spacing: .075em;
   font-family: 'Lato', sans-serif;
   color: #363636;
@@ -104,10 +104,10 @@ a:hover {
 .scroll-btn {
   padding-top: 25px;
 }
-.experiencetwobox, .experiencethreebox {
+.experiencetwobox, .experiencethreebox, .educationtwobox, .educationthreebox {
   margin-top: 35%;
 }
-.experiencethreebox {
+.experiencethreebox, .educationthreebox{
   margin-bottom: 35%;
 }
 /* for colored text segments */
@@ -128,7 +128,7 @@ a:hover {
 .arrows:hover path {
   stroke: lightskyblue;
 }
-.experience-arrows {
+.experience-arrows, .education-arrows {
   margin-top: 200px;
 }
 
