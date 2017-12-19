@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Events } from 'react-scroll';
 import ExperienceOne from './Experience/experience-one';
 import ExperienceTwo from './Experience/experience-two';
 import ExperienceThree from './Experience/experience-three';
@@ -18,14 +18,6 @@ class Experience extends Component {
     }
     componentDidMount() {
     
-      const configOne = {
-        origin: 'right',
-        duration: 1000,
-        delay: 150,
-        distance: '500px',
-        scale: 1,
-        easing: 'ease',
-      }
       const configTwo = {
         origin: 'left',
         duration: 1000,

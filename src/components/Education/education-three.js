@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 import 'bulma/css/bulma.css';
 
 const EducationThree = (props) => {

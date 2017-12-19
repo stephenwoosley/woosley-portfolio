@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Events } from 'react-scroll';
 import EducationOne from './Education/education-one';
 import EducationTwo from './Education/education-two';
 import EducationThree from './Education/education-three';
@@ -18,14 +18,6 @@ class Education extends Component {
     }
     componentDidMount() {
     
-      const configOne = {
-        origin: 'right',
-        duration: 1000,
-        delay: 150,
-        distance: '500px',
-        scale: 1,
-        easing: 'ease',
-      }
       const configTwo = {
         origin: 'left',
         duration: 1000,
