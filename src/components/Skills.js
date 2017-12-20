@@ -49,20 +49,15 @@ class Skills extends Component {
 
       g.append('g')
         .attr('transform', `translate(0,${h})`)
+        .attr("class", "axisLighter")
         .call(d3.axisBottom(xScale)
-          .tickSize(0)
-        );
-
-      // g.append('g')
-      //   .call(d3.axisLeft(yScale).ticks(7)  
-      //     .tickSize(0)
-      //   )
-      //   .append('text')
-      //   .attr('transform', 'rotate(-90)')
-      //   .attr('y', 6)
-      //   .attr('dy', '0.71em')
-      //   .attr('text-anchor', 'end')
-      //   .text('Ability Level');
+          //.tickSize(0)
+          .tickPadding(7.5)
+        )
+        .attr('margintop', '5px')
+        .attr('font-family', 'Lato,Helvetica,Arial,sans-serif')
+        .attr('font-size', '14px')
+        .attr('font-weight', 900)
   
     g.selectAll('rect')
       .data(data)
@@ -71,7 +66,7 @@ class Skills extends Component {
         .attr('x', function(d) { return xScale(d.skills); })
         .attr('y', d => yScale(d.ability_level))
         .attr('width', xScale.bandwidth())
-        .attr('height', d => h - yScale(d.ability_level));
+        .attr('height', d => h - yScale(d.ability_level))
     });
   }
 

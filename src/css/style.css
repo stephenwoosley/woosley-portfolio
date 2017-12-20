@@ -37,8 +37,16 @@
 }
 
 .chart-holder {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 7.5%;
+}
+
+.axisLighter {
+  fill: #464646
+}
+
+.axisLighter text {
+  fill: gray;
 }
 
 .icon-style {
