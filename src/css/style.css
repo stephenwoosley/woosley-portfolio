@@ -55,11 +55,11 @@ a:hover {
 }
 
 .bar {
-  fill: steelblue;
+  fill: coral;
 }
 
 .bar:hover {
-  fill: brown;
+  fill: lightseagreen;
 }
 
 /* -------- HEADER CSS -------- */

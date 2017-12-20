@@ -13,6 +13,13 @@ class Skills extends Component {
     this.loadData(); 
   }
 
+  displayLevel(num) {
+    switch(num) {
+      case 1:
+        return ""
+    }
+  }
+
   loadData = () => {
     
     const margin = {top: 20, right: 20, bottom: 30, left: 40};
@@ -36,7 +43,7 @@ class Skills extends Component {
                   .domain(data.map(d => d.skills))
                   .rangeRound([0, w]);
       let yScale = d3.scaleLinear()
-                  .domain([0, 7])
+                  .domain([0, 6])
                   .rangeRound([h, 0]);
       
 
@@ -46,14 +53,16 @@ class Skills extends Component {
           .tickSize(0)
         );
 
-      g.append('g')
-        .call(d3.axisLeft(yScale).ticks(7))
-        .append('text')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '0.71em')
-        .attr('text-anchor', 'end')
-        .text('Ability Level');
+      // g.append('g')
+      //   .call(d3.axisLeft(yScale).ticks(7)  
+      //     .tickSize(0)
+      //   )
+      //   .append('text')
+      //   .attr('transform', 'rotate(-90)')
+      //   .attr('y', 6)
+      //   .attr('dy', '0.71em')
+      //   .attr('text-anchor', 'end')
+      //   .text('Ability Level');
   
     g.selectAll('rect')
       .data(data)
