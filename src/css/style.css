@@ -36,7 +36,10 @@
   padding-top: 3.25rem
 }
 
-
+.chart-holder {
+  margin-top: 15%;
+  margin-left: 7.5%;
+}
 
 .icon-style {
   margin: 0 3px 0 3px;
@@ -49,6 +52,14 @@ a {
 
 a:hover {
   color: coral;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
 }
 
 /* -------- HEADER CSS -------- */
