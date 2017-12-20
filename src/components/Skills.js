@@ -22,11 +22,7 @@ class Skills extends Component {
       .attr('height', 500);
     const w = +svgBarChart.attr('width') - margin.left - margin.right;
     const h = +svgBarChart.attr('height') - margin.top - margin.bottom;
-    let xScale = d3.scaleBand()
-                  .range([0, w])
-                  .padding(0.1);
-    let yScale = d3.scaleLinear()
-                  .rangeRound([h, 0])
+    
     let g = svgBarChart.append('g')
                         .attr('transform', `translate(${margin.left},${margin.top})`)
                         //.call(d3.axisBottom(xScale));
@@ -35,9 +31,14 @@ class Skills extends Component {
     // load data from skillsData csv
     d3.csv(skillsData, (data) => {
 
-      console.log(data)
-      xScale.domain(data.map(d => d.skills));
-      yScale.domain([0, 7]);
+      let xScale = d3.scaleBand()
+                  .padding(0.1)
+                  .domain(data.map(d => d.skills))
+                  .rangeRound([0, w]);
+      let yScale = d3.scaleLinear()
+                  .domain([0, 7])
+                  .rangeRound([h, 0]);
+      
 
       g.append('g')
         .attr('transform', `translate(0,${h})`)
@@ -54,11 +55,11 @@ class Skills extends Component {
         .attr('text-anchor', 'end')
         .text('Ability Level');
   
-    g.selectAll('.bar')
+    g.selectAll('rect')
       .data(data)
       .enter().append('rect')
         .attr("class", "bar")
-        .attr('x', d => xScale(d.skill))
+        .attr('x', function(d) { return xScale(d.skills); })
         .attr('y', d => yScale(d.ability_level))
         .attr('width', xScale.bandwidth())
         .attr('height', d => h - yScale(d.ability_level));
