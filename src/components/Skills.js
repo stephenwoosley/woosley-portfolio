@@ -51,7 +51,7 @@ class Skills extends Component {
         .attr('transform', `translate(0,${h})`)
         .attr("class", "axisLighter")
         .call(d3.axisBottom(xScale)
-          //.tickSize(0)
+          .tickSize(0)
           .tickPadding(7.5)
         )
         .attr('margintop', '5px')
@@ -67,6 +67,8 @@ class Skills extends Component {
         .attr('y', d => yScale(d.ability_level))
         .attr('width', xScale.bandwidth())
         .attr('height', d => h - yScale(d.ability_level))
+        .attr("rx", 10)
+        .attr("ry", 10);
     });
   }
 

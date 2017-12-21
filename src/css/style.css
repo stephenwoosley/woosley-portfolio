@@ -45,8 +45,12 @@
   fill: #464646
 }
 
+.domain {
+  display:none;
+}
+
 .axisLighter text {
-  fill: gray;
+  fill: darkslategrey;
 }
 
 .icon-style {
