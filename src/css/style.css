@@ -46,10 +46,10 @@
   font: 10px sans-serif;
   font-weight: bold;
   display: none;
-  width: 70px;
+  width: 85px;
   height: 55px;
   background: #ffffff;
-  border: 2px solid #00CBA9;
+  border: 2px solid #464646;
   border-radius: 4px;
   padding: 2px;
   text-align: center;
@@ -83,10 +83,13 @@ a:hover {
 
 .bar {
   fill: coral;
+  opacity: .75;
+  transition: opacity .5s;
 }
 
 .bar:hover {
-  fill: lightseagreen;
+  cursor: pointer;
+  opacity: 1;
 }
 
 /* -------- HEADER CSS -------- */
@@ -99,7 +102,7 @@ a:hover {
 
 .tabs li.is-active a {
   color: coral;
-  border-bottom-color: green;
+  /* border-bottom-color: green; */
   border-bottom: 2px solid coral;
 }
 /* -------- TABS/NAV CSS -------- */

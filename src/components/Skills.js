@@ -15,8 +15,20 @@ class Skills extends Component {
 
   displayLevel(num) {
     switch(num) {
-      case 1:
-        return ""
+      case '2':
+        return "Working Knowledge"
+        break;
+      case '3':
+        return "Some Experience"
+        break;
+      case '4':
+        return "Proficient"
+        break;
+      case '5':
+        return "Very Proficient"
+        break;
+      default:
+        break;
     }
   }
 
@@ -32,8 +44,6 @@ class Skills extends Component {
     
     let g = svgBarChart.append('g')
                         .attr('transform', `translate(${margin.left},${margin.top})`)
-                        //.call(d3.axisBottom(xScale));
-
 
     // load data from skillsData csv
     d3.csv(skillsData, (data) => {
@@ -46,7 +56,6 @@ class Skills extends Component {
                   .domain([0, 6])
                   .rangeRound([h, 0]);
       
-
       g.append('g')
         .attr('transform', `translate(0,${h})`)
         .attr("class", "axisLighter")
@@ -58,7 +67,7 @@ class Skills extends Component {
         .attr('font-family', 'Lato,Helvetica,Arial,sans-serif')
         .attr('font-size', '14px')
         .attr('font-weight', 900)
-        
+
     let tooltip = d3.select('body').append('div').attr('class', 'toolTip');
   
     let bars = g.selectAll('rect')
@@ -76,9 +85,10 @@ class Skills extends Component {
             .style('left', d3.event.pageX - 50 + 'px')
             .style('top', d3.event.pageY - 70 + 'px')
             .style('display', 'inline-block')
-            .html(`${(d.skills)}<br>${(d.ability_level)}`);
+            .html(`${(d.skills)}<br>${(this.displayLevel(d.ability_level))}`);
         })
         .on('mouseout', d => { tooltip.style('display', 'none');});
+        
     bars.transition()
         .delay(700)
         .attr('y', d => yScale(d.ability_level))
