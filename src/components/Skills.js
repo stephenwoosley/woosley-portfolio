@@ -58,17 +58,31 @@ class Skills extends Component {
         .attr('font-family', 'Lato,Helvetica,Arial,sans-serif')
         .attr('font-size', '14px')
         .attr('font-weight', 900)
+        
+    let tooltip = d3.select('body').append('div').attr('class', 'toolTip');
   
-    g.selectAll('rect')
+    let bars = g.selectAll('rect')
       .data(data)
       .enter().append('rect')
         .attr("class", "bar")
         .attr('x', function(d) { return xScale(d.skills); })
-        .attr('y', d => yScale(d.ability_level))
+        .attr('y', d => yScale(0))
         .attr('width', xScale.bandwidth())
-        .attr('height', d => h - yScale(d.ability_level))
+        .attr('height', 0)
         .attr("rx", 10)
-        .attr("ry", 10);
+        .attr("ry", 10)
+        .on('mousemove', d => {
+          tooltip
+            .style('left', d3.event.pageX - 50 + 'px')
+            .style('top', d3.event.pageY - 70 + 'px')
+            .style('display', 'inline-block')
+            .html(`${(d.skills)}<br>${(d.ability_level)}`);
+        })
+        .on('mouseout', d => { tooltip.style('display', 'none');});
+    bars.transition()
+        .delay(700)
+        .attr('y', d => yScale(d.ability_level))
+        .attr('height', d => h - yScale(d.ability_level))
     });
   }
 
